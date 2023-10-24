@@ -69,4 +69,5 @@ const create_posts = (count) => {
   return array_of_posts;
 };
 
+// eslint-disable-next-line no-unused-vars
 const list_of_posts = create_posts(count_of_posts);
