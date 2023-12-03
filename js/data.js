@@ -1,12 +1,12 @@
 import {getRandomInt, generateArrayOfUniqUrl} from './util.js';
 
-const countOfPosts = 25;
-const countOfAvatar = 6;
-const possibleNumberOfComments = 30;
-const minCountOfLikes = 15;
-const maxCountOfLikes = 200;
+const COUNTOFPOSTS = 25;
+const COUNTOFAVATAR = 6;
+const POSSIBLENUMBEROFCOMMENTS = 30;
+const MINCOUNTOFLIKES = 15;
+const MAXCOUNTOFLIKES = 200;
 
-const variationsOfComments = [
+const VARIATIONSOFCOMMENTS = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -14,14 +14,14 @@ const variationsOfComments = [
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'];
 
-const variationsOfDiscriptions = [
+const VARIATIONSOFDISCRIPTIONS = [
   'Время не просто, оно просто время.',
   'Одна ошибка и ты ошибся.',
   'Запомни это, иначе забудешь.',
   'У самурая нет цели, есть только путь.',
   'Громко - это гораздо громче, чем тихо.'];
 
-const variationsOfNames = ['Ариана', 'София', 'Иван', 'Вероника', 'Алия', 'Тимофей', 'Александра', 'Дмитрий'];
+const VARIATIONSOFNAMES = ['Ариана', 'София', 'Иван', 'Вероника', 'Алия', 'Тимофей', 'Александра', 'Дмитрий'];
 
 const arrayOfUniqUrl = generateArrayOfUniqUrl();
 
@@ -29,12 +29,12 @@ const generateComments = (count) => {
   const arrayOfComments = [];
 
   for(let commentId = 1; commentId <= count; commentId++){
-    const avatar = `img/avatar-${getRandomInt(1,countOfAvatar)}.svg`;
+    const avatar = `img/avatar-${getRandomInt(1,COUNTOFAVATAR)}.svg`;
     const comment = {
       id: commentId,
       avatar: avatar,
-      message: variationsOfComments[getRandomInt(0, variationsOfComments.length - 1)],
-      name: variationsOfNames[getRandomInt(0, variationsOfNames.length - 1)],
+      message: VARIATIONSOFCOMMENTS[getRandomInt(0, VARIATIONSOFCOMMENTS.length - 1)],
+      name: VARIATIONSOFNAMES[getRandomInt(0, VARIATIONSOFNAMES.length - 1)],
     };
 
     arrayOfComments.push(comment);
@@ -51,9 +51,9 @@ const createPosts = (count) => {
     const post = {
       id: userId,
       url: `photos/${arrayOfUniqUrl[localUrl]}.jpg`,
-      discription: variationsOfDiscriptions[getRandomInt(0, variationsOfDiscriptions.length - 1)],
-      likes: getRandomInt(minCountOfLikes, maxCountOfLikes),
-      comments: generateComments(getRandomInt(0, possibleNumberOfComments)),
+      discription: VARIATIONSOFDISCRIPTIONS[getRandomInt(0, VARIATIONSOFDISCRIPTIONS.length - 1)],
+      likes: getRandomInt(MINCOUNTOFLIKES, MAXCOUNTOFLIKES),
+      comments: generateComments(getRandomInt(0, POSSIBLENUMBEROFCOMMENTS)),
     };
 
     arrayOfUniqUrl.splice(localUrl, 1);
@@ -63,6 +63,6 @@ const createPosts = (count) => {
   return arrayOfPosts;
 };
 
-const listOfPosts = createPosts(countOfPosts);
+const listOfPosts = createPosts(COUNTOFPOSTS);
 
 export {listOfPosts};
