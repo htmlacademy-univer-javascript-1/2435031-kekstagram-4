@@ -9,6 +9,7 @@ import {renderSmallItems} from './small-items.js';
 
 const RENDER_DELAY = 500;
 
+
 getData()
   .then((items) => {
     setState(items);
