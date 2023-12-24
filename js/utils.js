@@ -1,5 +1,7 @@
 const ALERT_SHOW_TIME = 5000;
 
+const DEFAULT_DEBOUNCE_DELAY = 500;
+
 const alertStyles = {
   zIndex : '100',
   position : 'absolute',
@@ -39,7 +41,7 @@ export const showAlert = (message) => {
   }, ALERT_SHOW_TIME);
 };
 
-export const debounce = (callback, timeoutDelay = 500) => {
+export const debounce = (callback, timeoutDelay = DEFAULT_DEBOUNCE_DELAY) => {
   let timeoutId;
 
   return (...rest) => {
