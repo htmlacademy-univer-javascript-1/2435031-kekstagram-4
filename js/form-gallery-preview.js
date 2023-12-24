@@ -1,4 +1,4 @@
-import {renderItemDetails} from './big-item.js';
+import {renderItemDetails} from './photo-comments.js';
 import {isEscapeKey, isEnterKey} from './utils.js';
 
 const bodyElement = document.querySelector('body');
