@@ -4,8 +4,8 @@ import {hideFormUpload, initFormUpload} from './form-upload.js';
 import {debounce, showAlert} from './utils.js';
 import {initValidation} from './validation.js';
 import {changeFilter, showFilter} from './filter.js';
-import {setState, getState} from './state.js';
-import {renderSmallItems} from './small-items.js';
+import {setState, getState} from './app-state.js';
+import {renderSmallItems} from './gallery-preview.js';
 
 const RENDER_DELAY = 500;
 

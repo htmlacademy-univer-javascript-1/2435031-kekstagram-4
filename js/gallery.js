@@ -1,4 +1,4 @@
-import {initFormBigItem, showFormBigItem} from './form-big-item.js';
+import {initFormBigItem, showFormBigItem} from './form-gallery-preview.js';
 
 const picturesElement = document.querySelector('.pictures');
 
